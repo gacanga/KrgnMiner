@@ -1,0 +1,14 @@
+# build outputs and local state
+bin/
+dev/
+logs/
+run/
+release/
+build/
+target/
+*.exe
+*.dll
+*.lib
+*.exp
+*.obj
+*.o

@@ -1,0 +1,33 @@
+KrgnMiner - mineur GPU NVIDIA pour Kerrigan (KRGN), Equihash 192,7 "kerrigan"
+Windows x64, compile avec CUDA 12.9 (code natif Pascal sm_61 : P104-100, GTX 1070/1080)
+
+Open source (Apache-2.0), SANS frais de developpeur.
+Pool : rplant (stratum-eu.rplant.xyz:7040).
+Chaque solution du GPU est reverifiee par le CPU avant d'etre envoyee au pool.
+
+DEMARRAGE RAPIDE
+  1. Ouvrez krgnminer.conf et remplacez YOUR_KRGN_ADDRESS par votre adresse Kerrigan (commence par K)
+     ("rig1" est le nom du worker, modifiable).
+  2. Double-cliquez sur start_krgn.bat. Il relance le mineur automatiquement
+     et ecrit krgnminer.log ; fermez la fenetre pour l'arreter.
+
+Autres scripts
+  test.bat   tests de calcul (CPU, puis chaque GPU contre les solutions de reference)
+  bench.bat  mesure des Sol/s pendant 60 s (arretez le minage avant)
+
+Prerequis
+  - Windows 10/11 x64
+  - pilote NVIDIA compatible CUDA 12 (R525 ou plus recent ; R580 est la derniere
+    branche pour Pascal). Rien d'autre a installer.
+  - environ 5,4 Go de memoire GPU libre par carte
+  - Les GPU plus recents executent le code PTX via le JIT du pilote (fonctionne,
+    non optimise).
+
+Mesure : 3 x P104-100, reglages d'usine : 42-43 Sol/s (~14 Sol/s par carte).
+
+Fichiers : krgnminer.exe, kgpu.dll, cudart64_12.dll (runtime CUDA NVIDIA), ca-bundle.crt
+(certificats pour les pools TLS), krgnminer.conf, start_krgn.bat, test.bat, bench.bat,
+LICENSE, NOTICE.
+Ligne de commande : krgnminer.exe --help
+
+Code source, documentation, versions publiees : https://github.com/gacanga/KrgnMiner

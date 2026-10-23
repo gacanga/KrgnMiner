@@ -1,0 +1,18 @@
+KrgnMiner - GPU miner for Kerrigan (KRGN), Equihash(192,7) "kerrigan".
+Copyright 2026 gacanga.  Licensed under the Apache License 2.0 (see LICENSE).
+No developer fee.
+
+The Equihash solver (Wagner's algorithm, CUDA) and its host code are original work.
+Correctness references used for the tests only (not linked into the miner):
+  - Kerrigan Core (MIT, github.com/kerrigan-network/kerrigan): src/crypto/equihash.cpp,
+    whose solver produced the reference solutions in src/eq_vectors.h;
+  - libsodium / Python hashlib: BLAKE2b known answers.
+The stratum client (json.h, tls_conn.*) comes from FiloMiner (same author, Apache-2.0).
+
+The Windows release zip also contains third-party components (not in this repository):
+  - OpenSSL (Apache-2.0), statically linked into krgnminer.exe (MSYS2 MINGW64 package);
+  - the MinGW-w64 runtime, winpthreads and libstdc++/libgcc (permissive licences, GCC
+    Runtime Library Exception), statically linked into krgnminer.exe;
+  - cudart64_12.dll, the NVIDIA CUDA runtime, redistributed under the NVIDIA CUDA Toolkit
+    EULA (used by kgpu.dll);
+  - ca-bundle.crt, the Mozilla CA certificate bundle (MPL-2.0), from MSYS2.

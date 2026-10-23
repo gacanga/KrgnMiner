@@ -1,0 +1,15 @@
+LIBRARY kgpu
+EXPORTS
+    kg_device_count
+    kg_create
+    kg_destroy
+    kg_name
+    kg_last_error
+    kg_compute_capability
+    kg_sm_count
+    kg_memory
+    kg_memory_used
+    kg_set_tpb
+    kg_solve
+    kg_profile
+    kg_layout
